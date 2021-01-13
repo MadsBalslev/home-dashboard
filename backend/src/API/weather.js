@@ -7,7 +7,7 @@ const getWeather = async () => {
 
   const baseUrl = 'https://api.openweathermap.org/data/2.5/onecall';
   const paramaters = {
-    appid: '5d2abb6ba8a6a755afaf617fc45810ea',
+    appid: process.env.WEATHER_API_KEY,
     lat: lat,
     lon: lon,
     exclude: 'minutely,hourly',
