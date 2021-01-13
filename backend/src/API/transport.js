@@ -14,7 +14,7 @@ const getStops = async (coordX, coordY) => {
 }
 
 const getDepatures = async () => {
-  const url = `${baseUrl}multiDepartureBoard?id1=8600020&id2=851946602`;
+  const url = `${baseUrl}multiDepartureBoard?id1=851946602&id2=8600020`; //
 
   const response = await fetch(url);
   const data = await response.text();
