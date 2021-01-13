@@ -25,7 +25,7 @@ const getWeather = async () => {
 }
 
 const getLocationInfo = async () => {
-  const locationUrl = `https://api.opencagedata.com/geocode/v1/json?q=${lat}+${lon}&key=36952dced6e7403f868a506e33ccd3ac`
+  const locationUrl = `https://api.opencagedata.com/geocode/v1/json?q=${lat}+${lon}&key=${process.env.LOCATION_API_KEY}`
   const locationResponse = await fetch(locationUrl);
   const location = await locationResponse.json();
 
