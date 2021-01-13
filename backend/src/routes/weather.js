@@ -8,4 +8,9 @@ router.get('/', async (req, res) => {
   res.send(localWeather);
 })
 
+router.get('/location', async (req, res) => {
+  const location = await weather.getLocationInfo();
+  res.send(location);
+})
+
 module.exports = router;
