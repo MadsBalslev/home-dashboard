@@ -4,6 +4,9 @@
       <Weather />
       <Clock />
     </div>
+    <div class="middle">
+      <Spotify />
+    </div>
     <div class="bottom">
       <News />
       <Transport />
@@ -16,13 +19,15 @@ import Weather from '@/components/Weather.vue';
 import Clock from '@/components/Clock.vue';
 import News from '@/components/News.vue'
 import Transport from '@/components/Transport.vue'
+import Spotify from '@/components/Spotify.vue';
 
 export default {
   components: {
     Weather,
     Clock,
     News,
-    Transport
+    Transport,
+    Spotify
   }
 }
 </script>
@@ -73,6 +78,12 @@ html {
   width: 100%;
   display: flex;
   justify-content: space-between;
+}
+
+.middle {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .bottom {
