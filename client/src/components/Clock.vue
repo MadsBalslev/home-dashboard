@@ -6,6 +6,8 @@
 </template>
 
 <script>
+import getWeekDay from '@/utils/getWeekDay.js'
+
 export default {
   data() {
     return {
@@ -18,13 +20,19 @@ export default {
   methods: {
     getCurrentTime() {
       const today = new Date();
-      const options = { year: 'numeric', month: 'short', day: 'numeric' };
+      const options = { year: 'numeric', month: 'short', day: 'numeric'};
 
-      const weekDay = today.toLocaleString('da-DK', {weekday: 'long'})
+      const weekDay = getWeekDay(today, 'long');
       this.weekDay = weekDay.charAt(0).toUpperCase() + weekDay.slice(1);
 
-      this.hour = today.getHours();
-      this.minute = today.getMinutes();
+      let hour = today.getHours();
+      hour = ("0" + hour).slice(-2);
+
+      let minute = today.getMinutes();
+      minute = ("0" + minute).slice(-2);
+
+      this.hour = hour;
+      this.minute = minute;
 
       this.dateStr = today.toLocaleDateString('da-DK', options)
     }

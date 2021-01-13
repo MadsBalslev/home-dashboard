@@ -1,18 +1,28 @@
 <template>
   <div class="container">
-    <Weather />
-    <Clock />
+    <div class="top">
+      <Weather />
+      <Clock />
+    </div>
+    <div class="bottom">
+      <News />
+      <Transport />
+    </div>
   </div>
 </template>
 
 <script>
 import Weather from '@/components/Weather.vue';
 import Clock from '@/components/Clock.vue';
+import News from '@/components/News.vue'
+import Transport from '@/components/Transport.vue'
 
 export default {
   components: {
     Weather,
-    Clock
+    Clock,
+    News,
+    Transport
   }
 }
 </script>
@@ -27,7 +37,7 @@ export default {
 }
 
 html {
-  background-color: #0E131F;
+  background-color: #000;
 }
 
 #app {
@@ -35,11 +45,12 @@ html {
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #FDFFF7;
+  color: #FFF;
 }
 
 .container {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
   height: calc(100% - 50px);
@@ -51,5 +62,23 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.break {
+  flex-basis: 100%;
+  height: 0;
+}
+
+.top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.bottom {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 </style>
