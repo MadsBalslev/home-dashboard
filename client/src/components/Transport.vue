@@ -26,7 +26,7 @@ export default {
   },
   created() {
     this.getDepartures();
-    this.interval = setInterval(() => this.getDepartures(), 300000)
+    this.interval = setInterval(() => this.getDepartures(), 60000)
   }
 }
 </script>
