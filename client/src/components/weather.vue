@@ -8,8 +8,8 @@
       <div class="forecast-day" v-for="forecast in forecast" :key="forecast.dt">
         <p>{{getDay(forecast.dt)}}</p>
         <img class="icon-small" :src="`http://openweathermap.org/img/wn/${forecast.weather[0].icon}.png`" alt="">
-        <p>{{Math.round(forecast.temp.max)}}°</p>
-        <p>{{Math.round(forecast.temp.min)}}°</p>
+        <p class="forecast-temp">{{Math.round(forecast.temp.max)}}°</p>
+        <p class="forecast-temp">{{Math.round(forecast.temp.min)}}°</p>
       </div>
     </div>
   </div>
@@ -131,5 +131,9 @@ img {
   margin-right: 20px;
   height: 40px;
   width: auto;
+}
+
+.forecast-temp {
+  text-align: right;
 }
 </style>
