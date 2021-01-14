@@ -6,6 +6,7 @@ const news = require('./routes/news');
 const weather = require('./routes/weather')
 const transport = require('./routes/transport')
 const spotify = require('./routes/spotify');
+const stores = require('./routes/stores')
 
 const app = express();
 const port = 3000;
@@ -21,6 +22,7 @@ app.use('/news', news);
 app.use('/weather', weather);
 app.use('/transport', transport);
 app.use('/spotify', spotify);
+app.use('/stores', stores);
 
 
 app.listen(port, () => {

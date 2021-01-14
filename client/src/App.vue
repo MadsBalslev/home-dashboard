@@ -2,7 +2,10 @@
   <div class="container">
     <div class="top">
       <Weather />
-      <Clock />
+      <div class="top-right">
+        <Clock />
+        <Stores />
+      </div>
     </div>
     <div class="middle">
       <Spotify />
@@ -20,6 +23,7 @@ import Clock from '@/components/Clock.vue';
 import News from '@/components/News.vue'
 import Transport from '@/components/Transport.vue'
 import Spotify from '@/components/Spotify.vue';
+import Stores from '@/components/Stores.vue';
 
 export default {
   components: {
@@ -27,7 +31,8 @@ export default {
     Clock,
     News,
     Transport,
-    Spotify
+    Spotify,
+    Stores
   }
 }
 </script>
@@ -78,6 +83,12 @@ html {
   width: 100%;
   display: flex;
   justify-content: space-between;
+}
+
+.top-right {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
 }
 
 .middle {
